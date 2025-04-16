@@ -1,0 +1,8 @@
+#!C:\Users\diana\OneDrive - Lambton College\_ESTUDIOS\_Big Data\Term 3\2. Neural Networks and Deep Learning\Project\nn_deep_learning\env310\Scripts\python.exe
+# -*- coding: UTF-8 -*-
+from __future__ import print_function, division, absolute_import
+
+from numba.misc.numba_entry import main
+
+if __name__ == "__main__":
+    main()
