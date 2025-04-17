@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import joblib
 import os
-import io
 import tempfile
 import traceback
 
@@ -165,6 +164,11 @@ if uploaded_file:
 
                 elif ext in [".joblib", ".pkl"]:
                     features = extract_features_tabular(uploaded_file)
+
+                    # Load and apply scaler for SVM
+                    scaler = joblib.load("models/scaler_svm.joblib")
+                    features = scaler.transform(features)
+
                     model = joblib.load(model_path)
                     pred_index = int(model.predict(features)[0])
                     pred = GENRES[pred_index]
